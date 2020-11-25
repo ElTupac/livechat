@@ -37,7 +37,11 @@ wss.on('request', req => {
     
 
     connection.on('close', (reason, desc) => {
+        const index = conexionesActivas.indexOf(u => u.name == name && u.id == id)
+        conexionesActivas.splice(index, 1);
         console.log(`${name}#${id} desconectado`);
+
+        if(!conexionesActivas.length) console.log("No hay usuarios");
     });
 
     connection.on('message', message => {

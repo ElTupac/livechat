@@ -1,0 +1,26 @@
+body{
+    background-color: #b3d4fc;
+}
+
+.chat-section{
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 40%;
+    margin-left: 5%;
+    height: fit-content;
+    background-color: #fff;
+}
+
+.chat-textarea{
+    resize: none;
+    display: block;
+    width: 95%;
+    margin-left: 2%;
+    margin-bottom: 10px;
+}
+
+.title{
+    margin-left: 2%;
+    font-weight: bolder;
+    text-decoration: underline;
+}

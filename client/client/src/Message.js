@@ -1,4 +1,5 @@
 import {Component} from "react";
+import "./Message.css";
 
 class Message extends Component{
     constructor(props){
@@ -6,9 +7,19 @@ class Message extends Component{
 
     }
 
+
+
     render(){
+        const chatDe = this.props.chatOf;
+        const info = this.props.info;
+        let from;
+        if(chatDe == info.from) from = "not-me";
+        else from = "me"
+        
         return(
-            <h3>Un mensaje</h3>
+            <div>
+                <p className={`message ${from}`} >{info.mess}</p>
+            </div>
         )
     }
 }
