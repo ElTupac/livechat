@@ -41,7 +41,7 @@ class Handler extends Component{
     componentDidMount(){
         const {name, id} = this.props.creds;
         if(name && id){
-            let socket = new WebSocket(`ws://186.13.4.194:4000/?id=${id}&name=${name}`);
+            let socket = new WebSocket(`wss://livechat-tupac.herokuapp.com/?id=${id}&name=${name}`);
             socket.onopen = e => {
                 console.log("Conectado");
                 this.setState({socket: socket});
