@@ -1,0 +1,55 @@
+.login {
+    display: inline-block;
+    padding: 0.6em 1.5em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #5cb85c;
+    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+        inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+        inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    text-align: center;
+    position: relative;
+    border: none;
+}
+.login:focus {
+    box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),
+        inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    outline: none;
+}
+.login:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+.register {
+    display: inline-block;
+    padding: 0.6em 1.5em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #0275d8;
+    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+        inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+        inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    text-align: center;
+    position: relative;
+    border: none;
+}
+.register:focus {
+    box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),
+        inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    outline: none;
+}
+.register:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}

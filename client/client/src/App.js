@@ -21,10 +21,7 @@ class App extends Component{
     const {name, id} = this.state;
     if(!name && !id) return <Login creds={this.setCredentials} />;
     else{
-      const creds = {
-        name: name,
-        id: id
-      }
+      const creds = { name, id }
       return(
         <div>
           <h1>{`${name}#${id}`}</h1>
