@@ -1,5 +1,6 @@
 import {Component} from "react";
 import {RegistroCliente, LoginCliente, checkCreds} from "./registrarBeta";
+import "./Login.css";
 
 class Login extends Component{
     constructor(props){
@@ -33,10 +34,12 @@ class Login extends Component{
 
     render(){
         return(
-            <div>
-                <button onClick={() => {LoginCliente(3, 1)}} className="login">Loguear</button>
-                <br/>
-                <button onClick={() => {RegistroCliente(3, 1)}} className="register">Registrarse</button>
+            <div className="login-container">
+                <h1>Tupac Livechat</h1>
+                <div className="btn-container">
+                    <button onClick={() => {LoginCliente(1, 1)}} className="login">Loguear</button>
+                    <button onClick={() => {RegistroCliente(1, 1)}} className="register">Registrarse</button>
+                </div>
             </div>
         );
     }

@@ -15,10 +15,12 @@ class Message extends Component{
         let from;
         if(chatDe == info.from) from = "not-me";
         else from = "me"
+        const timeNow = new Date();
         
         return(
-            <div>
-                <p className={`message ${from}`} >{info.mess}</p>
+            <div className={`message-container ${from}`}>
+                <p>{info.mess}</p>
+                <p className="time">{timeNow.getHours()}:{timeNow.getMinutes()}</p>
             </div>
         )
     }

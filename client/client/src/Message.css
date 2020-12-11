@@ -1,17 +1,27 @@
-.message{
+.message-container{
+    display: flex;
+    flex-direction: row;
     width: 75%;
     border: 1px solid black;
     border-radius: 5px;
     position: relative;
-    padding: 5px 5px;
+    margin: 5px;
 }
-
+.message-container p{
+    padding: 5px 5px;
+    margin: 0;
+    font-family: sans-serif;
+}
+.time{
+    position: absolute;
+    right: 1%;
+}
 .me{
     background-color: #25D366;
     left: 21%;
 }
 
 .not-me{
-    background-color: #fff;
+    background-color: lightgray;
     left: 2%;
 }

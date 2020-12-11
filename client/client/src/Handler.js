@@ -46,10 +46,14 @@ class Handler extends Component{
                 console.log("Conectado");
                 this.setState({socket: socket});
                 document.getElementById("enviar-btn").addEventListener('click', e => {
-                    const destinatario = document.getElementById("para").value;
-                    const texto = document.getElementById("texto").value;
+                    const destinatario = document.getElementById("para");
+                    const texto = document.getElementById("texto");
 
-                    if(destinatario && texto) this.enviarMensaje(destinatario, texto);
+                    if(destinatario.value && texto.value) {
+                        this.enviarMensaje(destinatario.value, texto.value);
+                        destinatario.value = "";
+                        texto.value = "";
+                    }
                 });
             }
             socket.onmessage = e => {   //e.data mensaje
