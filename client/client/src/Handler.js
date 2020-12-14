@@ -27,9 +27,9 @@ class Handler extends Component{
     //]
 
     enviarMensaje(dest, text){
-        const {name, id} = this.props.creds;
+        const {name} = this.props.creds;
         const msg = {
-            from: `${name}#${id}`,
+            from: `${name}`,
             to: dest,
             mess: text
         }
@@ -40,8 +40,8 @@ class Handler extends Component{
 
     componentDidMount(){
         const {name, id} = this.props.creds;
-        if(name && id){
-            let socket = new WebSocket(`wss://livechat-tupac.herokuapp.com/?id=${id}&name=${name}`);
+        if(name){
+            let socket = new WebSocket(`wss://livechat-tupac.herokuapp.com/?name=${name}`);
             socket.onopen = e => {
                 console.log("Conectado");
                 this.setState({socket: socket});

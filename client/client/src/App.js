@@ -6,25 +6,24 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      name: undefined,
-      id: undefined
+      name: undefined
     }
 
     this.setCredentials = this.setCredentials.bind(this);
   }
 
-  setCredentials(name, _id){
-    this.setState({name: name, id: _id});
+  setCredentials(name){
+    this.setState({name});
   }
 
   render(){
     const {name, id} = this.state;
-    if(!name && !id) return <Login creds={this.setCredentials} />;
+    if(!name) return <Login creds={this.setCredentials} />;
     else{
-      const creds = { name, id }
+      const creds = { name }
       return(
         <div>
-          <h1>{`${name}#${id}`}</h1>
+          <h1>{`${name}`}</h1>
           <Handler creds={creds} />
         </div>
       )

@@ -25,21 +25,20 @@ try{
 
 wss.on('request', req => {
     const connection = req.accept(null, req.origin);
-    const {name, id} = req.resourceURL.query;
-    if(name && id) {
+    const {name} = req.resourceURL.query;
+    if(name) {
         conexionesActivas.push({
             name: name,
-            id: id,
             conn: connection
         });
-        console.log(`${name}#${id} conectado`);
+        console.log(`${name} conectado`);
     }
     
 
     connection.on('close', (reason, desc) => {
-        const index = conexionesActivas.indexOf(u => u.name == name && u.id == id)
+        const index = conexionesActivas.indexOf(u => u.name == name);
         conexionesActivas.splice(index, 1);
-        console.log(`${name}#${id} desconectado`);
+        console.log(`${name} desconectado`);
 
         if(!conexionesActivas.length) console.log("No hay usuarios");
     });
@@ -48,8 +47,8 @@ wss.on('request', req => {
         //from, to, msg
         const {from, to, mess} = JSON.parse(message.utf8Data);
         for(let i in conexionesActivas){
-            const [name, id] = to.split("#");
-            if(conexionesActivas[i].name == name && conexionesActivas[i].id == id) conexionesActivas[i].conn.send(message.utf8Data); 
+            const name = to;
+            if(conexionesActivas[i].name == name) conexionesActivas[i].conn.send(message.utf8Data); 
         }
     });
 });

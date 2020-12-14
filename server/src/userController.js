@@ -1,14 +1,10 @@
-let ids = 0;
-
 module.exports = {
     async newUser(req, res){
         let name = req.params['name'];
 
-        if(name){
-            ids++;
+        if(name && name != ("" || undefined)){
             return res.json({'creds': {
-                name: name,
-                _id: ids
+                name
             }});
         }else{
             return res.json({'error': 'NO-NAME'});

@@ -15,7 +15,7 @@ class Login extends Component{
                 fetch(`https://livechat-tupac.herokuapp.com/newid/${creds.user}`).then(res => res.json())
                 .then(res => {
                     if(res.error) console.log(res.error);
-                    else this.props.creds(res.creds.name, res.creds._id);
+                    else this.props.creds(res.creds.name);
                 });
                 clearInterval(interval);
             }

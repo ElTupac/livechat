@@ -32,7 +32,8 @@ let creds = {
     user: "",
     token: ""
 };
-function setCreds({user, token}) { creds = {user, token}; }
+
+function setCreds({user, token}) { creds = {user, creds:{token}}; }
 export function getCreds() {return creds;}
 export function checkCreds() {
     let creds = localStorage.getItem("LoginInfo");
